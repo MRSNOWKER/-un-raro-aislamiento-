@@ -3,64 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z-Nation | Arma 3 Zombie Server</title>
-    <!-- Vinculamos el archivo de estilos -->
+    <title>Un Raro Aislamiento | Arma 3 Zombie Mission</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Z-NATION ARMA 3</h1>
-        <p>¿Podrás sobrevivir a la noche o te unirás a la horda?</p>
-    </header>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">UN RARO AISLAMIENTO</div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#descargas">Descargas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>UN RARO AISLAMIENTO</h1>
+            <p>Una misión de supervivencia inmersiva en un mundo devastado por zombies. Cada decisión es vida o muerte.</p>
+            <div class="hero-btns">
+                <a href="#historia" class="btn btn-primary">Descubre la Misión</a>
+                <a href="#descargas" class="btn btn-outline">Descargar Ahora</a>
+            </div>
+        </div>
+    </section>
 
     <div class="container">
 
-        <!-- Sobre el Servidor -->
-        <section id="info">
-            <h2>Sobre el Servidor</h2>
-            <p>Bienvenido a <strong>Z-Nation</strong>, una experiencia de supervivencia extrema en Arma 3. Nos enfocamos en el realismo, la escasez de recursos y una atmósfera terrorífica. Enfréntate a hordas dinámicas, gestiona tu hambre y sed, y alíate con otros supervivientes... o traiciónalos.</p>
-            <br>
-            <p><strong>IP del Servidor:</strong> 192.168.1.100:2302</p>
-        </section>
-
-        <!-- Características -->
-        <section id="features">
-            <h2>Características Clave</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Hordas Inteligentes</h3>
-                    <p>Zombies que reaccionan al ruido, la luz y el rastro de sangre. No te confíes.</p>
+        <!-- SECCIÓN LA HISTORIA -->
+        <section id="historia">
+            <h2 class="section-title">La Historia</h2>
+            <div class="history-grid">
+                <div class="history-card">
+                    <h3>El Brote</h3>
+                    <p>Nadie sabe exactamente dónde empezó, pero cuando las noticias comenzaron a reportar los primeros casos, ya era demasiado tarde. Lo que inicialmente se creyó que era una variante agresiva de la rabia, rápidamente se reveló como algo mucho peor. El virus reanimaba las células muertas, impulsando a los infectados con un hambre insaciable. Las ciudades cayeron en cuestión de días, y los gobiernos colapsaron semanas después. El mundo tal como lo conocíamos dejó de existir.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Loot Escaso</h3>
-                    <p>Encontrar armas militares o medicina es un milagro. Cada bala cuenta.</p>
+                <div class="history-card">
+                    <h3>El Aislamiento</h3>
+                    <p>Para intentar contener la plaga, las fuerzas militares restantes establecieron inmensas zonas de cuarentena. La Zona 47, donde te encuentras, fue una de las últimas en cerrarse. Los muros se levantaron, las puertas se sellaron, y todos los que quedaron dentro fueron abandonados a su suerte. No hay rescate en camino. No hay comunicación con el exterior. Solo estás tú, los muros impenetrables, y miles de infectados acechando en las calles desoladas.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Ciclo Día/Noche</h3>
-                    <p>La noche es verdaderamente oscura. Necesitarás visión nocturna o bengalas para sobrevivir.</p>
+                <div class="history-card">
+                    <h3>La Misión</h3>
+                    <p>Tu objetivo es simple pero casi imposible: sobrevivir y encontrar una salida. Deberás explorar las ruinas de la ciudad, recolectar suministros escasos, crear refugios temporales y, sobre todo, mantener el silencio. Te enfrentarás no solo a diferentes mutaciones de infectados, sino también al hambre, las enfermedades y la desesperación de otros supervivientes que harán cualquier cosa por un día más de vida.</p>
                 </div>
+            </div>
+            <div class="quote-block">
+                "En la oscuridad del aislamiento, el mayor monstruo puedes ser tú mismo."
             </div>
         </section>
 
-        <!-- Zona de Descargas -->
-        <section id="download" class="download-zone">
-            <h2>Zona de Descargas</h2>
-            <p>Para poder jugar en nuestro servidor sin errores, necesitas descargar nuestro archivo de configuración (Preset) e importarlo en tu Launcher de Arma 3.</p>
-            
-            <!-- El botón buscará este archivo en tu repositorio -->
-            <a href="preset.html" download class="download-btn">Descargar Preset de Mods</a>
-            
-            <div class="file-info">
-                <p><strong>Archivo:</strong> znation_mods.html | <strong>Tamaño:</strong> ~15 KB</p>
-                <p><em>Instrucciones: Descarga el archivo, abre el Launcher de Arma 3, ve a la sección "Mods", haz clic en "Importar" y selecciónalo.</em></p>
+        <!-- SECCIÓN CARACTERÍSTICAS -->
+        <section id="caracteristicas">
+            <h2 class="section-title">Características</h2>
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <div class="icon-box">🎯</div>
+                    <h3>Sistema de Combate</h3>
+                    <p>Munición escasa, retroceso realista y daño letal. Cada bala cuenta en este infierno.</p>
+                </div>
+                <div class="mechanic-card">
+                    <div class="icon-box">🛡️</div>
+                    <h3>Gestión de Recursos</h3>
+                    <p>Inventario limitado. Tendrás que decidir entre llevar más munición o suministros médicos.</p>
+                </div>
+                <div class="mechanic-card">
+                    <div class="icon-box">⚡</div>
+                    <h3>Sistema de Energía</h3>
+                    <p>Correr y luchar gasta resistencia. El agotamiento reducirá tu visión y precisión dramáticamente.</p>
+                </div>
+            </div>
+
+            <!-- Tabla de Infectados -->
+            <h2 class="section-title" style="font-size: 1.8rem; margin-top: 60px;">Tipos de Infectados</h2>
+            <div class="zombie-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                            <th>Amenaza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caminante</td>
+                            <td>Lentos pero letales en grupos. Nunca los subestimes en espacios cerrados.</td>
+                            <td><div class="stat-bar-container"><div class="stat-bar" style="width: 40%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Corredor</td>
+                            <td>Mutaciones recientes. Corren hacia ti en cuanto te detectan. Muy ruidosos.</td>
+                            <td><div class="stat-bar-container"><div class="stat-bar" style="width: 65%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Tanque</td>
+                            <td>Masa muscular mutada. Absorben daño masivo y sus golpes rompen huesos.</td>
+                            <td><div class="stat-bar-container"><div class="stat-bar" style="width: 95%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Gritón</td>
+                            <td>Ciegos pero con oído agudo. Su grito atrae hordas a tu posición.</td>
+                            <td><div class="stat-bar-container"><div class="stat-bar" style="width: 75%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Acechador</td>
+                            <td>Se ocultan en las sombras. Esperan a que les des la espalda para atacar.</td>
+                            <td><div class="stat-bar-container"><div class="stat-bar" style="width: 70%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Explosivo</td>
+                            <td>Cuerpos llenos de gases tóxicos. Explotan al recibir daño, infectando el área.</td>
+                            <td><div class="stat-bar-container"><div class="stat-bar" style="width: 85%;"></div></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DESCARGAS -->
+        <section id="descargas">
+            <h2 class="section-title">Descargas</h2>
+            <div class="downloads-content">
+                <div class="download-zone">
+                    <div class="icon-box">📄</div>
+                    <h3>Repositorio de la Misión</h3>
+                    <p class="file-name-txt">preset.html</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Soporta cualquier tipo de archivo de misión (Máx 20MB)</p>
+                    <a href="preset.html" download class="btn btn-outline">Descargar</a>
+                </div>
+
+                <div class="requirements-grid">
+                    <div class="req-card">
+                        <h3>Requisitos Mínimos</h3>
+                        <ul class="req-list">
+                            <li><strong>SO:</strong> Windows 7 SP1 (64-bit)</li>
+                            <li><strong>Procesador:</strong> Intel Dual-Core 2.4 GHz o AMD Dual-Core Athlon 2.5 GHz</li>
+                            <li><strong>Memoria:</strong> 4 GB RAM</li>
+                            <li><strong>Gráficos:</strong> NVIDIA GeForce 9800GT / AMD Radeon HD 5670 / Intel HD Graphics 4000 con 512 MB VRAM</li>
+                            <li><strong>DirectX:</strong> Versión 10</li>
+                            <li><strong>Almacenamiento:</strong> 45 GB de espacio disponible</li>
+                        </ul>
+                    </div>
+                    <div class="req-card">
+                        <h3>Requisitos Recomendados</h3>
+                        <ul class="req-list">
+                            <li><strong>SO:</strong> Windows 10 (64-bit)</li>
+                            <li><strong>Procesador:</strong> Intel Core i5-4460 o AMD FX 4300 o superior</li>
+                            <li><strong>Memoria:</strong> 8 GB RAM</li>
+                            <li><strong>Gráficos:</strong> NVIDIA GeForce GTX 660 / AMD Radeon HD 7800 Series con 2 GB VRAM</li>
+                            <li><strong>DirectX:</strong> Versión 11</li>
+                            <li><strong>Almacenamiento:</strong> 70 GB de espacio disponible (SSD recomendado)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="instrucciones-box">
+                    <h3>Instrucciones de Instalación</h3>
+                    <ul class="instrucciones-list">
+                        <li><span class="check-icon">✓</span>Paso 1: Abre el ejecutador de Arma 3 desde Steam.</li>
+                        <li><span class="check-icon">✓</span>Paso 2: Ve a la pestaña de configuración (Mods).</li>
+                        <li><span class="check-icon">✓</span>Paso 3: Clica en importar o añadir mod local.</li>
+                        <li><span class="check-icon">✓</span>Paso 4: Selecciona la carpeta del repositorio descargado.</li>
+                        <li><span class="check-icon">✓</span>Paso 5: Espera a que termine la instalación y verificación, luego ejecuta el juego.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
     </div>
 
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; 2026 Z-Nation Arma 3 Server. Todos los derechos reservados.</p>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">UN RARO AISLAMIENTO</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Una misión de supervivencia inmersiva donde cada decisión cuenta. Enfrenta el horror, administra tus recursos y sobrevive al apocalipsis.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#descargas">Descargas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Comunidad</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Únete a nuestra comunidad para encontrar otros supervivientes, recibir actualizaciones y soporte técnico.</p>
+                <a href="#" class="btn btn-discord">Unirse al Discord</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Un Raro Aislamiento. Todos los derechos reservados.</p>
+            <p style="font-size: 0.75rem; margin-top: 5px;"><a href="#">Políticas de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+        </div>
     </footer>
 
 </body>

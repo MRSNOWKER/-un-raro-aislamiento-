@@ -1,125 +1,437 @@
-/* Estilos Generales */
+/* ESTILOS GENERALES Y FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --card-bg: #111111;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --primary-red: #da291c;
+    --primary-red-hover: #b12016;
+    --primary-red-glow: rgba(218, 41, 28, 0.4);
+    --border-color: #333333;
+    --discord-blue: #5865F2;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0b0c10;
-    color: #c5c6c7;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Contenedor Principal */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Encabezado / Hero Section */
-header {
-    text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(11, 12, 16, 1)), 
-                url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=1200') no-repeat center/cover;
-    border-bottom: 3px solid #1f2833;
-}
-
-header h1 {
-    font-size: 3.5rem;
-    color: #66fcf1;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-    text-shadow: 0 0 15px rgba(102, 252, 241, 0.6);
-}
-
-header p {
-    font-size: 1.3rem;
-    color: #45f3ff;
-    font-style: italic;
-}
-
-/* Secciones */
-section {
-    margin: 40px 0;
-    padding: 30px;
-    background-color: #1f2833;
-    border-radius: 8px;
-    border-left: 5px solid #66fcf1;
-}
-
-h2 {
-    color: #66fcf1;
-    margin-bottom: 20px;
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Características / Info del Servidor */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* BARRA DE NAVEGACIÓN */
+nav {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-red);
+}
+
+/* SECCIÓN HERO (INICIO) */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(5, 5, 5, 1)), 
+                url('https://images.unsplash.com/photo-1510214343118-29a3b68427e3?q=80&w=2000&auto=format&fit=crop') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--text-main);
+    text-shadow: 0 0 15px var(--primary-red-glow);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.hero-btns {
+    display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
-.feature-card {
-    background-color: #0b0c10;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid #45f3ff;
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
 }
 
-.feature-card h3 {
-    color: #45f3ff;
+.btn-primary {
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-red-hover);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary-red);
+    color: var(--primary-red);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-red-glow);
+    color: white;
+}
+
+/* SECCIONES GENERALES */
+section {
+    padding: 100px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    text-shadow: 0 0 10px var(--primary-red-glow);
+    margin-bottom: 60px;
+}
+
+/* SECCIÓN LA HISTORIA */
+.history-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.history-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-left: 4px solid var(--primary-red);
+    border-radius: 4px;
+}
+
+.history-card h3 {
+    color: var(--primary-red);
+    margin-bottom: 15px;
+}
+
+.quote-block {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin-top: 60px;
+    border-radius: 4px;
+}
+
+/* SECCIÓN CARACTERÍSTICAS */
+.mechanics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.mechanic-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+}
+
+.mechanic-card h3 {
+    margin-bottom: 15px;
+}
+
+.mechanic-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Tabla de Infectados */
+.zombie-table {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    text-align: left;
+    padding: 15px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+}
+
+.stat-bar-container {
+    width: 150px;
+    height: 8px;
+    background-color: #222;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    background-color: var(--primary-red);
+    box-shadow: 0 0 8px var(--primary-red-glow);
+}
+
+/* SECCIÓN DESCARGAS */
+.downloads-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.download-zone {
+    background-color: var(--card-bg);
+    padding: 50px 40px;
+    border: 2px dashed var(--primary-red);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.download-zone .icon-box {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.file-name-txt {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.req-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.req-card h3 {
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.req-list li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.req-list strong {
+    color: var(--text-main);
+}
+
+.instrucciones-box {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.instrucciones-box h3 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--text-main);
+}
+
+.instrucciones-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.instrucciones-list li {
+    display: flex;
+    gap: 15px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    align-items: center;
+}
+
+.check-icon {
+    color: var(--primary-red);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 60px 0 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primary-red);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.footer-col ul li {
     margin-bottom: 10px;
 }
 
-/* Sección de Descarga */
-.download-zone {
-    text-align: center;
-    background: #112233;
-    border: 2px dashed #66fcf1;
-    padding: 50px 20px;
-}
-
-.download-btn {
-    display: inline-block;
-    background-color: #66fcf1;
-    color: #0b0c10;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102, 252, 241, 0.4);
-    margin-top: 20px;
-}
-
-.download-btn:hover {
-    background-color: #45f3ff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(69, 243, 255, 0.6);
-}
-
-.file-info {
-    margin-top: 20px;
+.footer-col ul li a {
+    color: var(--text-muted);
     font-size: 0.9rem;
-    color: #a9a9a9;
 }
 
-/* Pie de página */
-footer {
-    text-align: center;
-    padding: 30px;
-    margin-top: 60px;
+.footer-col ul li a:hover {
+    color: var(--primary-red);
+}
+
+.btn-discord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--discord-blue);
+    color: white;
     font-size: 0.9rem;
-    border-top: 1px solid #1f2833;
-    color: #c5c6c7;
+    width: 100%;
+    border-radius: 4px;
+    padding: 12px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.btn-discord:hover {
+    background-color: #4752c4;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+.footer-bottom a {
+    margin: 0 5px;
+}
+.footer-bottom a:hover {
+    color: var(--primary-red);
 }
