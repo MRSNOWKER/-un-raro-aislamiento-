@@ -16,6 +16,7 @@
                 <li><a href="#inicio" class="active">Inicio</a></li>
                 <li><a href="#historia">Historia</a></li>
                 <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#ts3">TS3</a></li>
                 <li><a href="#descargas">Descargas</a></li>
             </ul>
         </div>
@@ -132,11 +133,32 @@
             </div>
         </section>
 
+        <!-- SECCIÓN PROPIA DE TS3 -->
+        <section id="ts3">
+            <h2 class="section-title">Servidor TeamSpeak 3</h2>
+            <div class="history-card" style="max-width: 600px; margin: 0 auto; text-align: center; border: 1px solid rgba(218, 41, 28, 0.3); padding: 40px 20px;">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🔊</div>
+                <h3 style="margin-bottom: 15px; color: var(--text-main);">IP DEL SERVIDOR</h3>
+                
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #161616; padding: 15px 20px; border-radius: 6px; border: 1px solid #333; margin-bottom: 25px;">
+                    <span style="color: var(--primary-red); font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; letter-spacing: 1px;">IP ACTUAL:</span>
+                    <span id="ts-ip" style="font-family: monospace; font-size: 1.2rem; color: #fff; word-break: break-all; font-weight: bold; letter-spacing: 0.5px;">freedynip-k47sh58e2.ddnsking.eu:59944</span>
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px;">
+                    Utiliza esta dirección para conectarte directamente a nuestra central de transmisiones de radio de corto y largo alcance dentro de la Zona de Cuarentena. El uso de Task Force Radio es obligatorio.
+                </p>
+
+                <button onclick="copyTSIP()" class="btn btn-primary" id="copy-btn" style="cursor: pointer; border: none; padding: 12px 35px; font-size: 1rem; width: auto; font-family: 'Oswald', sans-serif;">Copiar IP del Servidor</button>
+            </div>
+        </section>
+
         <!-- SECCIÓN DESCARGAS -->
         <section id="descargas">
             <h2 class="section-title">Descargas</h2>
             <div class="downloads-content">
-                <!-- Grid de zonas de descarga -->
+                
+                <!-- Grid con ambas descargas alineadas -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
                     
                     <!-- Repositorio Misión -->
@@ -148,10 +170,10 @@
                         <a href="repositorio-unraroaislamiento.html" download class="btn btn-outline">Descargar</a>
                     </div>
 
-                    <!-- Teamspeak 3 / Plugin -->
+                    <!-- Archivo TeamSpeak (Instalador / Plugin) -->
                     <div class="download-zone" style="margin: 0;">
                         <div class="icon-box">🔊</div>
-                        <h3>Servidor TeamSpeak</h3>
+                        <h3>Archivo TeamSpeak 3</h3>
                         <p class="file-name-txt"></p>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Esta aplicación sirver para el chat de voz del servidor</p>
                         <a href="teamspeak3-server_win64-3.13.8.zip" download class="btn btn-primary">Descargar</a>
@@ -212,6 +234,7 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#historia">Historia</a></li>
                     <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#ts3">TS3</a></li>
                     <li><a href="#descargas">Descargas</a></li>
                 </ul>
             </div>
@@ -260,6 +283,22 @@
 
         updateCountdown();
         const intervalId = setInterval(updateCountdown, 1000);
+
+        // Función para copiar la IP de TeamSpeak al portapapeles
+        function copyTSIP() {
+            const ipText = "freedynip-k47sh58e2.ddnsking.eu:59944";
+            navigator.clipboard.writeText(ipText).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.innerHTML = "¡Copiado!";
+                btn.style.backgroundColor = "#4SB543"; 
+                setTimeout(() => {
+                    btn.innerHTML = "Copiar IP del Servidor";
+                    btn.style.backgroundColor = ""; 
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
     </script>
 
 </body>
