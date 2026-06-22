@@ -136,12 +136,27 @@
         <section id="descargas">
             <h2 class="section-title">Descargas</h2>
             <div class="downloads-content">
-                <div class="download-zone">
-                    <div class="icon-box">📄</div>
-                    <h3>Repositorio de la Misión</h3>
-                    <p class="file-name-txt">preset.html</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Soporta cualquier tipo de archivo de misión (Máx 20MB)</p>
-                    <a href="preset.html" download class="btn btn-outline">Descargar</a>
+                <!-- Grid de zonas de descarga -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                    
+                    <!-- Repositorio Misión -->
+                    <div class="download-zone" style="margin: 0;">
+                        <div class="icon-box">📄</div>
+                        <h3>Repositorio de la Misión</h3>
+                        <p class="file-name-txt">preset.html</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Soporta cualquier tipo de archivo de misión (Máx 20MB)</p>
+                        <a href="preset.html" download class="btn btn-outline">Descargar</a>
+                    </div>
+
+                    <!-- Teamspeak 3 / Plugin -->
+                    <div class="download-zone" style="margin: 0; border-color: rgba(218, 41, 28, 0.3);">
+                        <div class="icon-box">🔊</div>
+                        <h3>Servidor TeamSpeak</h3>
+                        <p class="file-name-txt">teamspeak.html</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Configuración de audio y cliente/plugin obligatorio de radio</p>
+                        <a href="teamspeak.html" download class="btn btn-primary">Descargar</a>
+                    </div>
+
                 </div>
 
                 <div class="requirements-grid">
@@ -212,9 +227,8 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DEL CONTADOR EN VIVO (Detecta automáticamente la fecha de HOY a las 23:00 en hora de Canarias UTC+1 o UTC+0 dependiendo del horario de verano) -->
+    <!-- SCRIPT DEL CONTADOR EN VIVO -->
     <script>
-        // Configurar la fecha objetivo para HOY a las 23:00 Hora Canaria (WET/WEST, Europa/London / Atlantic/Canary es equivalente en desfase)
         const targetDate = new Date();
         targetDate.setHours(23, 0, 0, 0);
 
@@ -233,7 +247,6 @@
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            // Formatear con ceros a la izquierda
             const displayHours = hours < 10 ? '0' + hours : hours;
             const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
             const displaySeconds = seconds < 10 ? '0' + seconds : seconds;
@@ -245,7 +258,6 @@
             }
         }
 
-        // Ejecutar inmediatamente y luego cada segundo
         updateCountdown();
         const intervalId = setInterval(updateCountdown, 1000);
     </script>
