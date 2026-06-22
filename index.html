@@ -21,11 +21,18 @@
         </div>
     </nav>
 
-    <!-- SECCIÓN HERO -->
+    <!-- SECCIÓN HERO CON CONTADOR -->
     <section id="inicio" class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(5, 5, 5, 1)), url('PORTADA URA.png') no-repeat center/cover;">
         <div class="hero-content">
             <h1>UN RARO AISLAMIENTO</h1>
             <p>Una misión de supervivencia inmersiva en un mundo devastado por zombies. Cada decisión es vida o muerte.</p>
+            
+            <!-- Contenedor del Contador -->
+            <div class="countdown-container" style="margin: 30px 0; font-family: 'Oswald', sans-serif;">
+                <h2 style="color: var(--primary-red); font-size: 1.8rem; letter-spacing: 3px; margin-bottom: 10px; text-shadow: 0 0 10px var(--primary-red-glow);">APERTURA</h2>
+                <div id="countdown" style="font-size: 2.5rem; font-weight: bold; color: #fff; letter-spacing: 2px;">00:00:00:00</div>
+            </div>
+
             <div class="hero-btns">
                 <a href="#historia" class="btn btn-primary">Descubre la Misión</a>
                 <a href="#descargas" class="btn btn-outline">Descargar Ahora</a>
@@ -132,9 +139,9 @@
                 <div class="download-zone">
                     <div class="icon-box">📄</div>
                     <h3>Repositorio de la Misión</h3>
-                    <p class="file-name-txt">repositorio-unraroaislamiento.html</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Este archivo contiene los mods para jugar la misión</p>
-                    <a href="repositorio-unraroaislamiento.html" download class="btn btn-outline">Descargar</a>
+                    <p class="file-name-txt">preset.html</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px;">Soporta cualquier tipo de archivo de misión (Máx 20MB)</p>
+                    <a href="preset.html" download class="btn btn-outline">Descargar</a>
                 </div>
 
                 <div class="requirements-grid">
@@ -204,6 +211,44 @@
             <p style="font-size: 0.75rem; margin-top: 5px;"><a href="#">Políticas de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
         </div>
     </footer>
+
+    <!-- SCRIPT DEL CONTADOR EN VIVO (Detecta automáticamente la fecha de HOY a las 23:00 en hora de Canarias UTC+1 o UTC+0 dependiendo del horario de verano) -->
+    <script>
+        // Configurar la fecha objetivo para HOY a las 23:00 Hora Canaria (WET/WEST, Europa/London / Atlantic/Canary es equivalente en desfase)
+        const targetDate = new Date();
+        targetDate.setHours(23, 0, 0, 0);
+
+        function updateCountdown() {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown').innerHTML = "¡YA ABIERTO!";
+                clearInterval(intervalId);
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Formatear con ceros a la izquierda
+            const displayHours = hours < 10 ? '0' + hours : hours;
+            const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+            const displaySeconds = seconds < 10 ? '0' + seconds : seconds;
+
+            if (days > 0) {
+                document.getElementById('countdown').innerHTML = days + "d " + displayHours + "h " + displayMinutes + "m " + displaySeconds + "s";
+            } else {
+                document.getElementById('countdown').innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+            }
+        }
+
+        // Ejecutar inmediatamente y luego cada segundo
+        updateCountdown();
+        const intervalId = setInterval(updateCountdown, 1000);
+    </script>
 
 </body>
 </html>
